@@ -9,5 +9,5 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule]
 })
 export class CountryTableComponent {
-  @Input() countries: any[] = [];  // Recebe a lista de países
+  @Input() countries: any[] | null = [];
 }
