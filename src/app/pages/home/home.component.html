@@ -1,7 +1,14 @@
-<h1>Lista de Países</h1>
-<ul>
-  <li *ngFor="let country of countries$ | async">
-    <img [src]="country.flag" alt="Bandeira" width="30"> 
-    {{ country.name }} - População: {{ country.population }} - Região: {{ country.region }}
-  </li>
-</ul>
+<div>
+    <div class="header ">
+        <h1>Lista de Países</h1>
+    
+    </div>
+    <!-- <countries-table></countries-table> -->
+    <ul>
+      <li *ngFor="let country of countries$ | async">
+        <img [src]="country.flag" alt="Bandeira" width="30"> 
+        {{ country.name }} - População: {{ country.population }} - Região: {{ country.region }}
+      </li>
+    </ul>
+
+</div>
