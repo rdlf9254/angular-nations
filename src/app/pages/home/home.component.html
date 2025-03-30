@@ -3,7 +3,11 @@
         <h1>Lista de Países</h1>
     
     </div>
-    <app-country-table [countries]="countries$ | async"></app-country-table>
+    <app-country-table *ngIf="countries$ | async as countries; else noData" [countries]="countries"></app-country-table>
+    <ng-template #noData>
+      <p>Não há países para exibir.</p>
+    </ng-template>
+  
     <!-- <ul>
       <li *ngFor="let country of countries$ | async">
         <img [src]="country.flag" alt="Bandeira" width="30"> 

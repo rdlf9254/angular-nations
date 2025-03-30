@@ -17,6 +17,6 @@ export class HomeComponent implements OnInit {
   constructor(private countryService: CountryService) {}
 
   ngOnInit() {
-    this.countries$ = this.countryService.getCountriesList();
+    this.countries$ = this.countryService.getCountriesList() ?? [];
   }
 }
