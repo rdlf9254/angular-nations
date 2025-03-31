@@ -5,4 +5,6 @@ import { CountryDetailComponent } from '@pages/country-detail/country-detail.com
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'country/:code', component: CountryDetailComponent },
+  { path: '**', redirectTo: '' }
+
 ];

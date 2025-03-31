@@ -1,4 +1,10 @@
 <div class="country-detail" *ngIf="countryDetails">
+  <div class="breadcrumb d-flex flex-row gap-2 text-secondary txt-small">
+    <a [routerLink]="['/']">Países</a>
+    <span>></span>
+    <span>{{ countryDetails.name.common }}</span>
+  </div>
+  
   <div class="header">
     <div
       class="p-4 mt-4 mb-4 gap-4 align-center rounded-2 d-flex justify-between bg-2"

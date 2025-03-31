@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CountryService } from '@services/country.service';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
@@ -17,6 +18,7 @@ import { CountrySectionComponent } from '@components/country-section/country-sec
     DividerModule,
     ImageModule,
     CountrySectionComponent,
+    RouterModule
   ],
   templateUrl: './country-detail.component.html',
   styleUrls: ['./country-detail.component.scss'],
