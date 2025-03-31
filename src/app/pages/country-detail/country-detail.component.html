@@ -11,123 +11,56 @@
     <app-country-section
       title="Identidade do País"
       icon="pi-flag"
-      [data]="[
-        { label: 'Nome comum', value: countryDetails.name.common },
-        { label: 'Nome oficial', value: countryDetails.name.official },
-        {
-          label: 'Código(s) do país',
-          value:
-            countryDetails.cca2 +
-            ' / ' +
-            countryDetails.ccn3 +
-            ' / ' +
-            countryDetails.cca3 +
-            ' / ' +
-            countryDetails.cioc
-        },
-        { label: 'Domínio da Internet', value: countryDetails.tld.join(', ') },
-        { label: 'Código FIFA', value: countryDetails.fifa }
-      ]"
+      [data]="countryIdentity"
     >
     </app-country-section>
 
     <app-country-section
       title="Geografia"
       icon="pi-map"
-      [data]="[
-        { label: 'Região', value: countryDetails.region },
-        { label: 'Sub-região', value: countryDetails.subregion },
-        {
-          label: 'Coordenadas',
-          value: countryDetails.latlng[0] + ', ' + countryDetails.latlng[1]
-        },
-        { label: 'Área', value: countryDetails.area + ' km²' },
-        {
-          label: 'Território sem saída para o mar',
-          value: countryDetails.landlocked ? 'Sim' : 'Não'
-        }
-      ]"
+      [data]="geography"
     >
     </app-country-section>
 
     <app-country-section
       title="População e Sociedade"
       icon="pi-users"
-      [data]="[
-        { label: 'População', value: countryDetails.population },
-        { label: 'Capital', value: countryDetails.capital[0] },
-        {
-          label: 'Línguas',
-          value: getLanguagesList(countryDetails.languages).join(', ')
-        },
-        {
-          label: 'Gentílico',
-          value:
-            countryDetails.demonyms.eng.m +
-            ' / ' +
-            countryDetails.demonyms.eng.f
-        }
-      ]"
+      [data]="populationAndSociety"
     >
     </app-country-section>
 
     <app-country-section
       title="Economia e Moeda"
       icon="pi-money-bill"
-      [data]="getCurrenciesList(countryDetails.currencies)"
+      [data]="economyAndCurrency"
     >
     </app-country-section>
 
     <app-country-section
       title="Política e Status Internacional"
       icon="pi-globe"
-      [data]="[
-        {
-          label: 'Independente',
-          value: countryDetails.independent ? 'Sim' : 'Não'
-        },
-        { label: 'Status', value: countryDetails.status },
-        {
-          label: 'Membro da ONU',
-          value: countryDetails.unMember ? 'Sim' : 'Não'
-        }
-      ]"
+      [data]="politicsAndStatus"
     >
     </app-country-section>
 
     <app-country-section
       title="Infraestrutura"
       icon="pi-car"
-      [data]="[
-        { label: 'Lado da direção', value: this.countryDetails.car.side },
-        {
-          label: 'Prefixo de placas',
-          value: this.countryDetails.car.signs.join(', ')
-        }
-      ]"
+      [data]="infrastructure"
     >
     </app-country-section>
 
     <app-country-section
       title="Mapas e Localização"
       icon="pi-map-marker"
-      [data]="[
-        { label: 'Google Maps', value: this.countryDetails.maps.googleMaps },
-        {
-          label: 'OpenStreetMap',
-          value: this.countryDetails.maps.openStreetMaps
-        }
-      ]"
+      [data]="mapsAndLocation"
     >
     </app-country-section>
 
     <app-country-section
       title="Outros Detalhes"
       icon="pi-calendar"
-      [data]="[
-        { label: 'Início da semana', value: this.countryDetails.startOfWeek },
-        { label: 'Fuso horário', value: this.countryDetails.timezones[0] }
-      ]"
+      [data]="otherDetails"
     >
     </app-country-section>
   </div>
