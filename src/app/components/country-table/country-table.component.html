@@ -18,29 +18,27 @@
     currentPageReportTemplate="Exibindo de {first} a {last} de {totalRecords} países."
   >
     <ng-template #caption>
-      <div class="rounded-top-right-1">
-        <div class="d-flex justify-end p-2">
-          <p-floatlabel>
-            <p-iconfield>
-              <p-inputicon class="pi pi-search" />
-              <input
-                type="text"
-                [(ngModel)]="searchValue"
-                pInputText
-                (input)="onFilter()"
-              />
-            </p-iconfield>
-            <label for="over_label">Pesquisar por nome</label>
-          </p-floatlabel>
+      <div class="d-flex justify-end p-4">
+        <p-floatlabel>
+          <p-iconfield>
+            <p-inputicon class="pi pi-search" />
+            <input
+              type="text"
+              [(ngModel)]="searchValue"
+              pInputText
+              (input)="onFilter()"
+            />
+          </p-iconfield>
+          <label for="over_label">Pesquisar por nome</label>
+        </p-floatlabel>
 
-          <p-button
-            class="pl-4"
-            label="Limpar filtros"
-            [outlined]="true"
-            icon="pi pi-filter-slash"
-            (click)="clear(dt1)"
-          />
-        </div>
+        <p-button
+          class="pl-4"
+          label="Limpar filtros"
+          [outlined]="true"
+          icon="pi pi-filter-slash"
+          (click)="clear(dt1)"
+        />
       </div>
     </ng-template>
 
