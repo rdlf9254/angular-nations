@@ -1,0 +1,10 @@
+<div>
+    <div class="header ">
+        <h1>Lista de Países</h1>
+    
+    </div>
+    <app-country-table *ngIf="countries$ | async as countries; else noData" [countries]="countries"></app-country-table>
+    <ng-template #noData>
+      <p>Não há países para exibir.</p>
+    </ng-template>
+</div>
