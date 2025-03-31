@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Table, TableModule } from 'primeng/table';
+import { FormsModule } from '@angular/forms';
 
+import { Table, TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
@@ -18,16 +19,33 @@ import { InputIconModule } from 'primeng/inputicon';
     ButtonModule,
     IconFieldModule,
     InputIconModule,
+    FormsModule,
     // InputTextModule,
   ],
 })
-export class CountryTableComponent {
+export class CountryTableComponent implements OnInit {
   @Input() countries: any[] = [];
-  searchValue: string | undefined;
-  dt1!: Table;
+  filteredCountries: any[] = [];
+
+  searchValue: string = ''; 
+
+  ngOnInit(): void {
+    this.filteredCountries = [...this.countries];
+  }
+
+  onFilter() {
+    if (this.searchValue) {
+      this.filteredCountries = this.countries.filter((country) =>
+        country.name.toLowerCase().includes(this.searchValue.toLowerCase())
+      );
+    } else {
+      this.filteredCountries = [...this.countries];
+    }
+  }
 
   clear(table: Table) {
     table.clear();
     this.searchValue = '';
+    this.filteredCountries = [...this.countries];
   }
 }

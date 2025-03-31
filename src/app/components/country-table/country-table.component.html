@@ -1,7 +1,7 @@
 <div>
   <p-table
     #dt1
-    [value]="countries"
+    [value]="filteredCountries"
     dataKey="id"
     [tableStyle]="{ 'min-width': '50rem' }"
     size="large"
@@ -24,7 +24,13 @@
           />
           <p-iconfield>
             <p-inputicon styleClass="pi pi-search" />
-            <input type="text" pInputText placeholder="Search" />
+            <input
+              type="text"
+              [(ngModel)]="searchValue"
+              pInputText
+              (input)="onFilter()"
+              placeholder="Pesquisar por nome"
+            />
           </p-iconfield>
         </div>
       </div>
@@ -33,7 +39,11 @@
     <ng-template #header>
       <tr>
         <th>Bandeira</th>
-        <th pSortableColumn="name">Nome <p-sortIcon field="name" /></th>
+        <th pSortableColumn="name">
+          Nome
+          <p-sortIcon field="name" />
+        </th>
+
         <th pSortableColumn="population">
           População <p-sortIcon field="population" />
         </th>
