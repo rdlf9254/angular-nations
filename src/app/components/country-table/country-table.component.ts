@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { Table, TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -8,6 +9,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
+
 
 @Component({
   selector: 'app-country-table',
@@ -31,6 +33,8 @@ export class CountryTableComponent implements OnInit {
 
   searchValue: string = '';
 
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     this.filteredCountries = [...this.countries];
   }
@@ -49,5 +53,9 @@ export class CountryTableComponent implements OnInit {
     table.clear();
     this.searchValue = '';
     this.filteredCountries = [...this.countries];
+  }
+
+  viewCountryDetails(countryCode: string) {
+    this.router.navigate([`/country/${countryCode}`]);
   }
 }

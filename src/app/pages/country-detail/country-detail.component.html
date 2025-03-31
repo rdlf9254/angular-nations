@@ -1,0 +1,89 @@
+<div class="country-detail" *ngIf="countryDetails">
+  <div class="breadcrumb d-flex flex-row gap-2 text-secondary txt-small">
+    <a [routerLink]="['/']">Países</a>
+    <span>></span>
+    <span>{{ countryDetails.name.common }}</span>
+  </div>
+  
+  <div class="header">
+    <div
+      class="p-4 mt-4 mb-4 gap-4 align-center rounded-2 d-flex justify-between bg-2"
+    >
+      <div class="d-flex align-center gap-4 flex-row">
+        <p-image
+          [src]="countryDetails.flags.svg"
+          alt="Image"
+          width="150"
+          [preview]="true"
+        />
+        <div class="d-flex flex-column">
+          <span class="text-secondary">Detalhes:</span>
+          <h1 class="nowrap">{{ countryDetails.name.common }}</h1>
+        </div>
+      </div>
+      <div class="d-flex flex-column gap-4 align-center">
+        <span class="text-secondary">Brasão:</span>
+        <p-image
+          [src]="countryDetails.coatOfArms.svg"
+          alt="Image"
+          height="75"
+          [preview]="true"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="country-info gap-4">
+    <app-country-section
+      title="Identidade do País"
+      icon="pi-flag"
+      [data]="countryIdentity"
+    >
+    </app-country-section>
+
+    <app-country-section title="Geografia" icon="pi-map" [data]="geography">
+    </app-country-section>
+
+    <app-country-section
+      title="População e Sociedade"
+      icon="pi-users"
+      [data]="populationAndSociety"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Economia e Moeda"
+      icon="pi-money-bill"
+      [data]="economyAndCurrency"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Política e Status Internacional"
+      icon="pi-globe"
+      [data]="politicsAndStatus"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Infraestrutura"
+      icon="pi-car"
+      [data]="infrastructure"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Mapas e Localização"
+      icon="pi-map-marker"
+      [data]="mapsAndLocation"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Outros Detalhes"
+      icon="pi-calendar"
+      [data]="otherDetails"
+    >
+    </app-country-section>
+  </div>
+</div>

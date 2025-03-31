@@ -1,1 +1,432 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  align-items: start;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: 4px;
+}
+
+.m-2 {
+  margin: 8px;
+}
+
+.m-3 {
+  margin: 12px;
+}
+
+.m-4 {
+  margin: 16px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.txt-small{
+  font-size: small;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-1 {
+  padding: 4px;
+}
+
+.p-2 {
+  padding: 8px;
+}
+
+.p-3 {
+  padding: 12px;
+}
+
+.p-4 {
+  padding: 16px;
+}
+.pl-0 {
+  padding-left: 0;
+}
+
+.pl-1 {
+  padding-left: 4px;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pl-4 {
+  padding-left: 16px;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pr-1 {
+  padding-right: 4px;
+}
+
+.pr-2 {
+  padding-right: 8px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.pr-4 {
+  padding-right: 16px;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+.gap-4 {
+  gap: 16px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-flex {
+  display: inline-flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+.flex-shrink-1 {
+  flex-shrink: 1;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.align-self-start {
+  align-self: flex-start;
+}
+
+.align-self-center {
+  align-self: center;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}
+
+.align-self-stretch {
+  align-self: stretch;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-auto {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.order-first {
+  order: -1;
+}
+
+.order-last {
+  order: 1;
+}
+
+.order-0 {
+  order: 0;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.align-content-start {
+  align-content: flex-start;
+}
+
+.align-content-center {
+  align-content: center;
+}
+
+.align-content-end {
+  align-content: flex-end;
+}
+
+/* Borda arredondada para todos os cantos */
+.rounded-0 {
+  border-radius: 0;
+}
+
+.rounded-1 {
+  border-radius: 4px;
+}
+
+.rounded-2 {
+  border-radius: 8px;
+}
+
+.rounded-3 {
+  border-radius: 12px;
+}
+
+.rounded-4 {
+  border-radius: 16px;
+}
+
+/* Bordas arredondadas específicas para cada canto */
+.rounded-top-left-0 {
+  border-top-left-radius: 0;
+}
+
+.rounded-top-left-1 {
+  border-top-left-radius: 4px;
+}
+
+.rounded-top-left-2 {
+  border-top-left-radius: 8px;
+}
+
+.rounded-top-left-3 {
+  border-top-left-radius: 12px;
+}
+
+.rounded-top-left-4 {
+  border-top-left-radius: 16px;
+}
+
+.rounded-top-right-0 {
+  border-top-right-radius: 0;
+}
+
+.rounded-top-right-1 {
+  border-top-right-radius: 4px;
+}
+
+.rounded-top-right-2 {
+  border-top-right-radius: 8px;
+}
+
+.rounded-top-right-3 {
+  border-top-right-radius: 12px;
+}
+
+.rounded-top-right-4 {
+  border-top-right-radius: 16px;
+}
+
+.rounded-bottom-left-0 {
+  border-bottom-left-radius: 0;
+}
+
+.rounded-bottom-left-1 {
+  border-bottom-left-radius: 4px;
+}
+
+.rounded-bottom-left-2 {
+  border-bottom-left-radius: 8px;
+}
+
+.rounded-bottom-left-3 {
+  border-bottom-left-radius: 12px;
+}
+
+.rounded-bottom-left-4 {
+  border-bottom-left-radius: 16px;
+}
+
+.rounded-bottom-right-0 {
+  border-bottom-right-radius: 0;
+}
+
+.rounded-bottom-right-1 {
+  border-bottom-right-radius: 4px;
+}
+
+.rounded-bottom-right-2 {
+  border-bottom-right-radius: 8px;
+}
+
+.rounded-bottom-right-3 {
+  border-bottom-right-radius: 12px;
+}
+
+.rounded-bottom-right-4 {
+  border-bottom-right-radius: 16px;
+}
+
+.bg-1{
+  
+  background-color: #121212;
+}
+
+.bg-2{
+  background-color: #18181B;
+}
+
+.text-secondary {
+  color: #b6b6b6
+}
