@@ -57,8 +57,46 @@ body {
 .p-4 {
   padding: 16px;
 }
+.pl-0 {
+  padding-left: 0;
+}
 
-/* Flexbox */
+.pl-1 {
+  padding-left: 4px;
+}
+
+.pl-2 {
+  padding-left: 8px;
+}
+
+.pl-3 {
+  padding-left: 12px;
+}
+
+.pl-4 {
+  padding-left: 16px;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pr-1 {
+  padding-right: 4px;
+}
+
+.pr-2 {
+  padding-right: 8px;
+}
+
+.pr-3 {
+  padding-right: 12px;
+}
+
+.pr-4 {
+  padding-right: 16px;
+}
+
 .d-flex {
   display: flex;
 }
@@ -253,4 +291,106 @@ body {
 
 .align-content-end {
   align-content: flex-end;
+}
+
+/* Borda arredondada para todos os cantos */
+.rounded-0 {
+  border-radius: 0;
+}
+
+.rounded-1 {
+  border-radius: 4px;
+}
+
+.rounded-2 {
+  border-radius: 8px;
+}
+
+.rounded-3 {
+  border-radius: 12px;
+}
+
+.rounded-4 {
+  border-radius: 16px;
+}
+
+/* Bordas arredondadas específicas para cada canto */
+.rounded-top-left-0 {
+  border-top-left-radius: 0;
+}
+
+.rounded-top-left-1 {
+  border-top-left-radius: 4px;
+}
+
+.rounded-top-left-2 {
+  border-top-left-radius: 8px;
+}
+
+.rounded-top-left-3 {
+  border-top-left-radius: 12px;
+}
+
+.rounded-top-left-4 {
+  border-top-left-radius: 16px;
+}
+
+.rounded-top-right-0 {
+  border-top-right-radius: 0;
+}
+
+.rounded-top-right-1 {
+  border-top-right-radius: 4px;
+}
+
+.rounded-top-right-2 {
+  border-top-right-radius: 8px;
+}
+
+.rounded-top-right-3 {
+  border-top-right-radius: 12px;
+}
+
+.rounded-top-right-4 {
+  border-top-right-radius: 16px;
+}
+
+.rounded-bottom-left-0 {
+  border-bottom-left-radius: 0;
+}
+
+.rounded-bottom-left-1 {
+  border-bottom-left-radius: 4px;
+}
+
+.rounded-bottom-left-2 {
+  border-bottom-left-radius: 8px;
+}
+
+.rounded-bottom-left-3 {
+  border-bottom-left-radius: 12px;
+}
+
+.rounded-bottom-left-4 {
+  border-bottom-left-radius: 16px;
+}
+
+.rounded-bottom-right-0 {
+  border-bottom-right-radius: 0;
+}
+
+.rounded-bottom-right-1 {
+  border-bottom-right-radius: 4px;
+}
+
+.rounded-bottom-right-2 {
+  border-bottom-right-radius: 8px;
+}
+
+.rounded-bottom-right-3 {
+  border-bottom-right-radius: 12px;
+}
+
+.rounded-bottom-right-4 {
+  border-bottom-right-radius: 16px;
 }
