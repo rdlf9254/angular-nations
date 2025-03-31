@@ -17,6 +17,7 @@ export class CountryService {
           population: country.population,
           region: country.region,
           flag: country.flags.svg,
+          cca3: country.cca3,
         }))
       ),
       catchError((error) => {
