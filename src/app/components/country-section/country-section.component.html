@@ -1,18 +1,23 @@
-<div *ngIf="data && data.length > 0">
-    <p-divider align="left" type="solid">
-      <b><i class="pi" [ngClass]="icon"></i> {{ title }}</b>
-    </p-divider>
-  
-    <div *ngFor="let item of data">
-      <strong>{{ item.label }}:</strong>
-            
+<div *ngIf="data && data.length > 0" class="m-4">
+
+  <p-fieldset [toggleable]="true">
+    <ng-template #header>
+      <div class="d-flex align-center gap-4">
+        <i class="pi" [ngClass]="icon"></i>
+        <h2>{{ title }}</h2>
+      </div>
+    </ng-template>
+
+    <div *ngFor="let item of data" class="d-flex gap-2 m-2">
+      <strong class="text-secondary">{{ item.label }}:</strong>
+
       <ng-container *ngIf="isLink(item.value)">
         <a [href]="item.value" target="_blank">{{ item.value }}</a>
       </ng-container>
-  
+
       <ng-container *ngIf="!isLink(item.value)">
         {{ item.value }}
       </ng-container>
     </div>
-  </div>
-  
+  </p-fieldset>
+</div>

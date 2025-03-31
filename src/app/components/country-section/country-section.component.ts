@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FieldsetModule } from 'primeng/fieldset';
+
 
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
@@ -9,7 +11,7 @@ import { ImageModule } from 'primeng/image';
   selector: 'app-country-section',
   templateUrl: './country-section.component.html',
   styleUrls: ['./country-section.component.scss'],
-  imports: [DividerModule, ImageModule, ButtonModule, CommonModule],
+  imports: [DividerModule, ImageModule, ButtonModule, CommonModule,FieldsetModule],
 })
 export class CountrySectionComponent {
   @Input() title!: string;
