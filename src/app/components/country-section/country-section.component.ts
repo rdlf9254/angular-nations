@@ -17,8 +17,7 @@ export class CountrySectionComponent {
   @Input() icon!: string;
   @Input() data!: { label: string; value: any }[];
 
-  isImage(value: any): boolean {
-    return typeof value === 'string' && value.endsWith('.svg');
+  isLink(value: any): boolean {
+    return typeof value === 'string' && value.startsWith('http');
   }
-    
 }

@@ -1,20 +1,18 @@
 <div *ngIf="data && data.length > 0">
-  <p-divider align="left" type="solid">
-    <b><i class="pi" [ngClass]="icon"></i> {{ title }}</b>
-  </p-divider>
-
-  <div *ngFor="let item of data">
-    <strong>{{ item.label }}:</strong>
-    <ng-container *ngIf="isImage(item.value)">
-      <p-image
-        [src]="item.value"
-        alt="Image"
-        width="100"
-        [preview]="true"
-      ></p-image>
-    </ng-container>
-    <ng-container *ngIf="!isImage(item.value)">
-      {{ item.value }}
-    </ng-container>
+    <p-divider align="left" type="solid">
+      <b><i class="pi" [ngClass]="icon"></i> {{ title }}</b>
+    </p-divider>
+  
+    <div *ngFor="let item of data">
+      <strong>{{ item.label }}:</strong>
+            
+      <ng-container *ngIf="isLink(item.value)">
+        <a [href]="item.value" target="_blank">{{ item.value }}</a>
+      </ng-container>
+  
+      <ng-container *ngIf="!isLink(item.value)">
+        {{ item.value }}
+      </ng-container>
+    </div>
   </div>
-</div>
+  
