@@ -3,13 +3,15 @@ import { CountryService } from '@services/country.service';
 import { Observable } from 'rxjs';
 import { CommonModule, AsyncPipe } from '@angular/common';
 import { CountryTableComponent } from '@components/country-table/country-table.component';
+import { DividerModule } from 'primeng/divider';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [CommonModule, AsyncPipe, CountryTableComponent],
+  imports: [CommonModule, AsyncPipe, CountryTableComponent,DividerModule],
 })
 export class HomeComponent implements OnInit {
   countries$!: Observable<any[]>;

@@ -38,6 +38,16 @@ body {
   margin: 16px;
 }
 
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+
+
 .p-0 {
   padding: 0;
 }
@@ -97,6 +107,10 @@ body {
   padding-right: 16px;
 }
 
+.gap-4 {
+  gap: 16px;
+}
+
 .d-flex {
   display: flex;
 }
@@ -145,7 +159,7 @@ body {
   width: 100%;
 }
 
-.h-full {
+.h-100 {
   height: 100%;
 }
 
@@ -175,6 +189,10 @@ body {
 
 .flex-nowrap {
   flex-wrap: nowrap;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .flex-grow-0 {
@@ -393,4 +411,17 @@ body {
 
 .rounded-bottom-right-4 {
   border-bottom-right-radius: 16px;
+}
+
+.bg-1{
+  
+  background-color: #121212;
+}
+
+.bg-2{
+  background-color: #18181B;
+}
+
+.text-secondary {
+  color: #b6b6b6
 }

@@ -1,10 +1,24 @@
 <div>
-    <div class="header ">
-        <h1>Lista de Países</h1>
-    
+  <div class="header">
+    <div
+      class="p-4 mt-4 mb-4 gap-4 align-center rounded-2 d-flex flex-row bg-2"
+    >
+      <img src="assets/images/world.svg" alt="" />
+      <!-- <p-divider layout="vertical" class="h-100"/> -->
+      <h1 class="nowrap">Lista de Países</h1>
+      <p-divider layout="vertical" class="h-100" />
+      <span class="text-secondary">
+        Bem-vindo à página! Aqui, você tem acesso à lista completa de países. É
+        possível ordenar, filtrar por nome e visualizar mais detalhes de países
+        específicos ao clicar em 'Ver detalhes'.
+      </span>
     </div>
-    <app-country-table *ngIf="countries$ | async as countries; else noData" [countries]="countries"></app-country-table>
-    <ng-template #noData>
-      <p>Não há países para exibir.</p>
-    </ng-template>
+  </div>
+  <app-country-table
+    *ngIf="countries$ | async as countries; else noData"
+    [countries]="countries"
+  ></app-country-table>
+  <ng-template #noData>
+    <p>Não há países para exibir.</p>
+  </ng-template>
 </div>
