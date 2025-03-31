@@ -7,12 +7,12 @@ import { map, catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class CountryService {
-  private apiUrl = 'https://restcountries.com/v3.1/all';
+  private baseUrl = 'https://restcountries.com/v3.1';
 
   constructor(private http: HttpClient) {}
 
   getCountriesList(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
+    return this.http.get<any[]>(`${this.baseUrl}/all`).pipe(
       map((countries) =>
         countries.map((country) => ({
           name: country.name.common,
@@ -29,8 +29,7 @@ export class CountryService {
     );
   }
 
-  getCountryDetails(countryCode: string) {
-    return this.http.get<any[]>(`https://restcountries.com/v3.1/alpha?codes=${countryCode}`);
+  getCountryDetails(countryCode: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/alpha?codes=${countryCode}`);
   }
 }
-

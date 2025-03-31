@@ -33,4 +33,14 @@ export class CountryDetailComponent implements OnInit {
         console.log(data);
       });
   }
+
+  getCurrenciesList(currencies: any): { name: string, symbol: string }[] {
+    return Object.values(currencies);
+  }
+
+  getLanguagesList(languages: any): string[] {
+    return Object.values(languages);
+  }
+  
+  
 }
