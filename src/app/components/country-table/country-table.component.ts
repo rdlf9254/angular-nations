@@ -6,7 +6,8 @@ import { Table, TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
-// import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-country-table',
@@ -20,14 +21,15 @@ import { InputIconModule } from 'primeng/inputicon';
     IconFieldModule,
     InputIconModule,
     FormsModule,
-    // InputTextModule,
+    FloatLabelModule,
+    InputTextModule,
   ],
 })
 export class CountryTableComponent implements OnInit {
   @Input() countries: any[] = [];
   filteredCountries: any[] = [];
 
-  searchValue: string = ''; 
+  searchValue: string = '';
 
   ngOnInit(): void {
     this.filteredCountries = [...this.countries];

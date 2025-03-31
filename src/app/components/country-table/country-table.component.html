@@ -22,16 +22,19 @@
             icon="pi pi-filter-slash"
             (click)="clear(dt1)"
           />
-          <p-iconfield>
-            <p-inputicon styleClass="pi pi-search" />
-            <input
-              type="text"
-              [(ngModel)]="searchValue"
-              pInputText
-              (input)="onFilter()"
-              placeholder="Pesquisar por nome"
-            />
-          </p-iconfield>
+
+          <p-floatlabel>
+            <p-iconfield>
+              <p-inputicon class="pi pi-search" />
+              <input
+                type="text"
+                [(ngModel)]="searchValue"
+                pInputText
+                (input)="onFilter()"
+              />
+            </p-iconfield>
+            <label for="over_label">Pesquisar por nome</label>
+          </p-floatlabel>
         </div>
       </div>
     </ng-template>
