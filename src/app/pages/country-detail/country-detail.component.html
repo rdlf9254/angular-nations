@@ -1,6 +1,7 @@
 <div class="country-detail" *ngIf="countryDetails">
   <h2>{{ countryDetails.name.common }} - Detalhes</h2>
-  <img [src]="countryDetails.flags.svg" alt="Bandeira" width="150" />
+  <p-image [src]="countryDetails.flags.svg" alt="Image" width="150" [preview]="true" />
+
 
   <div class="country-info">
     <p><strong>Capital:</strong> {{ countryDetails.capital[0] }}</p>
@@ -31,6 +32,12 @@
       </span>
     </p>
     <p><strong>Fuso horário:</strong> {{ countryDetails.timezones[0] }}</p>
+    <p-divider />
+    <p-divider align="left" type="solid">
+        <b>Left</b>
+        </p-divider>
+    
+
     <p>
       <strong>Área geográfica:</strong> {{ countryDetails.latlng[0] }},
       {{ countryDetails.latlng[1] }}
@@ -38,6 +45,10 @@
     <p>
       <strong>Independente:</strong>
       {{ countryDetails.independent ? "Sim" : "Não" }}
+    </p>
+    <p>
+      <strong>Membro da ONU:</strong>
+      {{ countryDetails.unMember ? "Sim" : "Não" }}
     </p>
 
     <h3>Links:</h3>
@@ -56,7 +67,8 @@
 
     <div class="coat-of-arms">
       <h4>Brasão de armas</h4>
-      <img [src]="countryDetails.coatOfArms.svg" alt="Brasão" width="100" />
+      <p-image [src]="countryDetails.coatOfArms.svg" alt="Image" width="100" [preview]="true" />
+
     </div>
   </div>
 </div>
