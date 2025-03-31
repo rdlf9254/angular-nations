@@ -17,7 +17,7 @@
         <span class="">Paises</span>
         <div class="flex">
           <p-button
-            label="Clear"
+            label="Limpar filtros"
             [outlined]="true"
             icon="pi pi-filter-slash"
             (click)="clear(dt1)"
@@ -60,9 +60,14 @@
         <td>{{ country.population }}</td>
         <td>{{ country.region }}</td>
         <td>
-          <button (click)="viewCountryDetails(country.cca3)">
-            Ver Detalhes
-          </button>
+          <p-button
+            label="Ver detalhes"
+            icon="pi pi-user"
+            severity="secondary"
+            [rounded]="true"
+            size="small"
+            (click)="viewCountryDetails(country.cca3)"
+          />
         </td>
       </tr>
     </ng-template>
