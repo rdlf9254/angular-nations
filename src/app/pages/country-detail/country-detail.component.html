@@ -1,1 +1,29 @@
-<p>country-detail works!</p>
+<div class="country-detail" *ngIf="countryDetails">
+    <h2>{{ countryDetails.name.common }} - Detalhes</h2>
+    <img [src]="countryDetails.flags.svg" alt="Bandeira" width="150" />
+    
+    <div class="country-info">
+      <p><strong>Capital:</strong> {{ countryDetails.capital[0] }}</p>
+      <p><strong>População:</strong> {{ countryDetails.population  }}</p>
+      <p><strong>Área:</strong> {{ countryDetails.area }} km²</p>
+      <p><strong>Região:</strong> {{ countryDetails.region }}</p>
+      <p><strong>Sub-região:</strong> {{ countryDetails.subregion }}</p>
+      <p><strong>Moeda:</strong> {{ countryDetails.currencies.EUR.name }} ({{ countryDetails.currencies.EUR.symbol }})</p>
+      <p><strong>Língua:</strong> {{ countryDetails.languages.swe }}</p>
+      <p><strong>Fuso horário:</strong> {{ countryDetails.timezones[0] }}</p>
+      <p><strong>Área geográfica:</strong> {{ countryDetails.latlng[0] }}, {{ countryDetails.latlng[1] }}</p>
+      <p><strong>Independente:</strong> {{ countryDetails.independent ? 'Sim' : 'Não' }}</p>
+      
+      <h3>Links:</h3>
+      <ul>
+        <li><a [href]="countryDetails.maps.googleMaps" target="_blank">Google Maps</a></li>
+        <li><a [href]="countryDetails.maps.openStreetMaps" target="_blank">OpenStreetMap</a></li>
+      </ul>
+  
+      <div class="coat-of-arms">
+        <h4>Brasão de armas</h4>
+        <img [src]="countryDetails.coatOfArms.svg" alt="Brasão" width="100" />
+      </div>
+    </div>
+  </div>
+  

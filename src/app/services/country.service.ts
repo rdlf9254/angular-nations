@@ -8,7 +8,9 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class CountryService {
   private apiUrl = 'https://restcountries.com/v3.1/all';
+
   constructor(private http: HttpClient) {}
+
   getCountriesList(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map((countries) =>
@@ -26,4 +28,9 @@ export class CountryService {
       })
     );
   }
+
+  getCountryDetails(countryCode: string) {
+    return this.http.get<any[]>(`https://restcountries.com/v3.1/alpha?codes=${countryCode}`);
+  }
 }
+
