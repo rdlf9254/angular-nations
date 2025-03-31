@@ -1,49 +1,52 @@
 <div>
-
-    <p-table
-      [value]="countries"
-      [tableStyle]="{ 'min-width': '50rem' }"
-      size="large"
-      stripedRows
-      sortField="name"
-      [sortOrder]="1"
-      [scrollable]="true"
-      scrollHeight="flex"
-    >
-      <ng-template #caption>
-        <div class="">
-          <span class="">Paises</span>
-          <div class="flex">
-            <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" />
-            <!-- (click)="clear(dt1)" -->
-            <p-iconfield iconPosition="left" class="ml-auto">
-              <p-inputicon>
-                <i class="pi pi-search"></i>
-              </p-inputicon>
-              <input pInputText type="text" placeholder="Search keyword" />
-              <!-- (input)="dt1.filterGlobal($event.target.value, 'contains')" -->
-            </p-iconfield>
-          </div>
+  <p-table
+    #dt1
+    [value]="countries"
+    dataKey="id"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    size="large"
+    stripedRows
+    sortField="name"
+    [sortOrder]="1"
+    [scrollable]="true"
+    scrollHeight="flex"
+    [globalFilterFields]="['country.name']"
+  >
+    <ng-template #caption>
+      <div class="">
+        <span class="">Paises</span>
+        <div class="flex">
+          <p-button
+            label="Clear"
+            [outlined]="true"
+            icon="pi pi-filter-slash"
+            (click)="clear(dt1)"
+          />
+          <p-iconfield>
+            <p-inputicon styleClass="pi pi-search" />
+            <input type="text" pInputText placeholder="Search" />
+          </p-iconfield>
         </div>
-      </ng-template>
-    
-      <ng-template #header>
-        <tr>
-          <th>Bandeira</th>
-          <th pSortableColumn="name">Nome <p-sortIcon field="name" /></th>
-          <th pSortableColumn="population">
-            População <p-sortIcon field="population" />
-          </th>
-          <th pSortableColumn="region">Região <p-sortIcon field="region" /></th>
-        </tr>
-      </ng-template>
-      <ng-template #body let-country>
-        <tr>
-          <td><img [src]="country.flag" alt="Bandeira" width="35" /></td>
-          <td>{{ country.name }}</td>
-          <td>{{ country.population }}</td>
-          <td>{{ country.region }}</td>
-        </tr>
-      </ng-template>
-    </p-table>
+      </div>
+    </ng-template>
+
+    <ng-template #header>
+      <tr>
+        <th>Bandeira</th>
+        <th pSortableColumn="name">Nome <p-sortIcon field="name" /></th>
+        <th pSortableColumn="population">
+          População <p-sortIcon field="population" />
+        </th>
+        <th pSortableColumn="region">Região <p-sortIcon field="region" /></th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-country>
+      <tr>
+        <td><img [src]="country.flag" alt="Bandeira" width="35" /></td>
+        <td>{{ country.name }}</td>
+        <td>{{ country.population }}</td>
+        <td>{{ country.region }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
