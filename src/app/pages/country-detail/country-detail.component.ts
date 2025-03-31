@@ -7,11 +7,17 @@ import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
 import { ImageModule } from 'primeng/image';
 
-import { CardModule } from 'primeng/card';
+import { CountrySectionComponent } from '@components/country-section/country-section.component';
 
 @Component({
   selector: 'app-country-detail',
-  imports: [CommonModule, ButtonModule, CardModule, DividerModule,ImageModule],
+  imports: [
+    CommonModule,
+    ButtonModule,
+    DividerModule,
+    ImageModule,
+    CountrySectionComponent,
+  ],
   templateUrl: './country-detail.component.html',
   styleUrls: ['./country-detail.component.scss'],
 })
@@ -37,11 +43,15 @@ export class CountryDetailComponent implements OnInit {
       });
   }
 
-  getCurrenciesList(currencies: any): { name: string; symbol: string }[] {
-    return Object.values(currencies);
-  }
-
   getLanguagesList(languages: any): string[] {
     return Object.values(languages);
   }
+  
+  getCurrenciesList(currencies: any): { label: string, value: string }[] {
+    return Object.values(currencies).map((currency: any) => ({
+      label: currency.name,
+      value: `${currency.name} (${currency.symbol})`
+    }));
+  }
+  
 }

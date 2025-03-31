@@ -1,74 +1,134 @@
 <div class="country-detail" *ngIf="countryDetails">
   <h2>{{ countryDetails.name.common }} - Detalhes</h2>
-  <p-image [src]="countryDetails.flags.svg" alt="Image" width="150" [preview]="true" />
-
+  <p-image
+    [src]="countryDetails.flags.svg"
+    alt="Image"
+    width="150"
+    [preview]="true"
+  />
 
   <div class="country-info">
-    <p><strong>Capital:</strong> {{ countryDetails.capital[0] }}</p>
-    <p><strong>População:</strong> {{ countryDetails.population }}</p>
-    <p><strong>Área:</strong> {{ countryDetails.area }} km²</p>
-    <p><strong>Região:</strong> {{ countryDetails.region }}</p>
-    <p><strong>Sub-região:</strong> {{ countryDetails.subregion }}</p>
-    <p>
-      <strong>Moeda:</strong>
-      <span
-        *ngFor="
-          let currency of getCurrenciesList(countryDetails.currencies);
-          let last = last
-        "
-      >
-        {{ currency.name }} ({{ currency.symbol }})<span *ngIf="!last">, </span>
-      </span>
-    </p>
-    <p>
-      <strong>Línguas:</strong>
-      <span
-        *ngFor="
-          let language of getLanguagesList(countryDetails.languages);
-          let last = last
-        "
-      >
-        {{ language }}<span *ngIf="!last">, </span>
-      </span>
-    </p>
-    <p><strong>Fuso horário:</strong> {{ countryDetails.timezones[0] }}</p>
-    <p-divider />
-    <p-divider align="left" type="solid">
-        <b>Left</b>
-        </p-divider>
-    
+    <app-country-section
+      title="Identidade do País"
+      icon="pi-flag"
+      [data]="[
+        { label: 'Nome comum', value: countryDetails.name.common },
+        { label: 'Nome oficial', value: countryDetails.name.official },
+        {
+          label: 'Código(s) do país',
+          value:
+            countryDetails.cca2 +
+            ' / ' +
+            countryDetails.ccn3 +
+            ' / ' +
+            countryDetails.cca3 +
+            ' / ' +
+            countryDetails.cioc
+        },
+        { label: 'Domínio da Internet', value: countryDetails.tld.join(', ') },
+        { label: 'Código FIFA', value: countryDetails.fifa }
+      ]"
+    >
+    </app-country-section>
 
-    <p>
-      <strong>Área geográfica:</strong> {{ countryDetails.latlng[0] }},
-      {{ countryDetails.latlng[1] }}
-    </p>
-    <p>
-      <strong>Independente:</strong>
-      {{ countryDetails.independent ? "Sim" : "Não" }}
-    </p>
-    <p>
-      <strong>Membro da ONU:</strong>
-      {{ countryDetails.unMember ? "Sim" : "Não" }}
-    </p>
+    <app-country-section
+      title="Geografia"
+      icon="pi-map"
+      [data]="[
+        { label: 'Região', value: countryDetails.region },
+        { label: 'Sub-região', value: countryDetails.subregion },
+        {
+          label: 'Coordenadas',
+          value: countryDetails.latlng[0] + ', ' + countryDetails.latlng[1]
+        },
+        { label: 'Área', value: countryDetails.area + ' km²' },
+        {
+          label: 'Território sem saída para o mar',
+          value: countryDetails.landlocked ? 'Sim' : 'Não'
+        }
+      ]"
+    >
+    </app-country-section>
 
-    <h3>Links:</h3>
-    <ul>
-      <li>
-        <a [href]="countryDetails.maps.googleMaps" target="_blank">
-          Google Maps
-        </a>
-      </li>
-      <li>
-        <a [href]="countryDetails.maps.openStreetMaps" target="_blank">
-          OpenStreetMap
-        </a>
-      </li>
-    </ul>
+    <app-country-section
+      title="População e Sociedade"
+      icon="pi-users"
+      [data]="[
+        { label: 'População', value: countryDetails.population },
+        { label: 'Capital', value: countryDetails.capital[0] },
+        {
+          label: 'Línguas',
+          value: getLanguagesList(countryDetails.languages).join(', ')
+        },
+        {
+          label: 'Gentílico',
+          value:
+            countryDetails.demonyms.eng.m +
+            ' / ' +
+            countryDetails.demonyms.eng.f
+        }
+      ]"
+    >
+    </app-country-section>
 
-    <div class="coat-of-arms">
-      <h4>Brasão de armas</h4>
-      <p-image [src]="countryDetails.coatOfArms.svg" alt="Image" width="100" [preview]="true" />
+    <app-country-section
+      title="Economia e Moeda"
+      icon="pi-money-bill"
+      [data]="getCurrenciesList(countryDetails.currencies)"
+    >
+    </app-country-section>
 
-    </div>
+    <app-country-section
+      title="Política e Status Internacional"
+      icon="pi-globe"
+      [data]="[
+        {
+          label: 'Independente',
+          value: countryDetails.independent ? 'Sim' : 'Não'
+        },
+        { label: 'Status', value: countryDetails.status },
+        {
+          label: 'Membro da ONU',
+          value: countryDetails.unMember ? 'Sim' : 'Não'
+        }
+      ]"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Infraestrutura"
+      icon="pi-car"
+      [data]="[
+        { label: 'Lado da direção', value: this.countryDetails.car.side },
+        {
+          label: 'Prefixo de placas',
+          value: this.countryDetails.car.signs.join(', ')
+        }
+      ]"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Mapas e Localização"
+      icon="pi-map-marker"
+      [data]="[
+        { label: 'Google Maps', value: this.countryDetails.maps.googleMaps },
+        {
+          label: 'OpenStreetMap',
+          value: this.countryDetails.maps.openStreetMaps
+        }
+      ]"
+    >
+    </app-country-section>
+
+    <app-country-section
+      title="Outros Detalhes"
+      icon="pi-calendar"
+      [data]="[
+        { label: 'Início da semana', value: this.countryDetails.startOfWeek },
+        { label: 'Fuso horário', value: this.countryDetails.timezones[0] }
+      ]"
+    >
+    </app-country-section>
   </div>
 </div>
