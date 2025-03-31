@@ -11,6 +11,11 @@
     [scrollable]="true"
     scrollHeight="flex"
     [globalFilterFields]="['country.name']"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20, 100]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Exibindo de {first} a {last} de {totalRecords} países."
   >
     <ng-template #caption>
       <div class="">
